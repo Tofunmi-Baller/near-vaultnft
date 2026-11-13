@@ -23,7 +23,7 @@ const WalletContext = createContext<WalletContextValue>({
 })
 
 export function WalletProvider({ children }: { children: ReactNode }) {
-  const [walletId, setWalletId] = useState<string | null>('demo-creator.testnet')
+  const [walletId, setWalletId] = useState<string | null>(null)
 
   const connect = useCallback((id: string) => setWalletId(id), [])
   const disconnect = useCallback(() => setWalletId(null), [])
